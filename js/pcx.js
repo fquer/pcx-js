@@ -138,7 +138,7 @@
             if (this.header.bpp === 8 && this.byteView[this.buffer.byteLength - 769] === 12) {
                 this.palette = new Uint8Array(this.buffer.slice(this.buffer.byteLength - 768));
             } else if (this.header.bpp === 1) {
-                this.palette = this.header.palette;
+                this.palette = new Uint8Array([0, 0, 0, 255, 255, 255]);
             } else {
                 throw 'Could not find 256 color palette.';
             }
